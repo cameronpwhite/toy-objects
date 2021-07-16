@@ -41,6 +41,7 @@ const buckyballs = {
 toys.push(jenga, buckyballs);
 
 for (const toy of toys) {
+    toy.price += (toy.price * 0.05);
     console.log(`The price of ${toy.name} is $${toy.price}.`);
 }
 
