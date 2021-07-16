@@ -30,7 +30,15 @@ const pixel = {
 
 phones.push(pixel)
 
+
+// Defining a phone to find
+const phoneToFind = 1;
+
+
 for (const phone of phones) {
-    phone.price += (phone.price * 0.05);
-    console.log(phone.price);
+    //Only one phone will cause the condition below to eval as true.
+    if (phone.id === phoneToFind) {
+        phone.price += (phone.price * 0.05);
+        console.log(phone.price);
+    }
 }
