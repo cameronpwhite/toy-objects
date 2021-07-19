@@ -20,7 +20,6 @@ const phones = [
 
 // Define a new phone
 const pixel = {
-    id: 3,
     name: "Pixel",
     maker: "Google",
     operatingSystem: "Android",
@@ -28,17 +27,33 @@ const pixel = {
     weight: 1.3
 }
 
-phones.push(pixel)
+// phones.push(pixel)
 
+const addPhoneToInventory = (phoneObject) => {
+    const lastIndex = phones.length - 1;
+    const currentLastPhone = phones[lastIndex];
+    const maxId = currentLastPhone.id;
+    const idForNewPhone = maxId + 1;
 
-// Defining a phone to find
-const phoneToFind = 1;
+    phoneObject.id = idForNewPhone;
+    phones.push(phoneObject);
+}
 
+addPhoneToInventory(pixel);
 
 for (const phone of phones) {
-    //Only one phone will cause the condition below to eval as true.
-    if (phone.id === phoneToFind) {
-        phone.price += (phone.price * 0.05);
-        console.log(phone.price);
-    }
+    console.log(`The ${phone.maker} ${phone.name} costs ${phone.price} dollars. It weighs ${phone.weight} grams`);
 }
+
+console.log(phones);
+// Defining a phone to find
+// const phoneToFind = 1;
+
+
+// for (const phone of phones) {
+//     //Only one phone will cause the condition below to eval as true.
+//     if (phone.id === phoneToFind) {
+//         phone.weight += 0.4
+//         console.log(`The ${phone.maker} ${phone.name} costs $${phone.price}.`);
+//     }
+// }
